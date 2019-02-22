@@ -6,33 +6,50 @@ public class SortingHat {
 		// TODO Auto-generated method stub
 
 		
-		int howMany = 10000;
-		//int[ ] nums = getRandom(howMany);
-		int[ ] nums0 = getAscendingOrder(howMany);
-		int[ ] nums1 = nums0.clone();
-		int[ ] nums2 = getRandom(howMany);
-		int[ ] nums3 = getDescendingOrder(howMany);
-		int[ ] nums3A = nums3.clone();
-
-
-
-		//System.out.println(Arrays.toString(nums0));
-		//System.out.println(Arrays.toString(nums1));
+		int howMany = 10;
 		
+		int numList[] = getRandom(howMany);
+		int numList1[] = numList.clone();
+		//System.out.println(Arrays.toString(numList));
 		
-//		SelectionSort sSort = new SelectionSort(nums0, "Selection Sort");
-//		doTiming(sSort);
-//		//System.out.println(sSort);
+
+//		MergeSortNR msNR = new MergeSortNR(numList, "MS Non-Recursive");
+//		doTiming(msNR);
+//		//System.out.println(msNR);
+
+		MergeSortRecursive msR = new MergeSortRecursive(numList, "MS Recursive");
+		doTiming(msR);
+		//System.out.println(msR);
+		listCheck2(numList);
+
+		
+//		int howMany = 10000;
+		int[ ] nums = getRandom(howMany);
+//		int[ ] nums0 = getAscendingOrder(howMany);
+//		int[ ] nums1 = nums0.clone();
+//		int[ ] nums2 = getRandom(howMany);
+//		int[ ] nums3 = getDescendingOrder(howMany);
+//		int[ ] nums3A = nums3.clone();
+//
+//
+//
+//		//System.out.println(Arrays.toString(nums0));
+//		//System.out.println(Arrays.toString(nums1));
 //		
-		BubbleSort bSort = new BubbleSort(nums3, "Bubble Sort");
-		doTiming(bSort);
-//		//System.out.println(bSort);
-		InsertionSort inS = new InsertionSort(nums3A, "Insertion Sort");
-		doTiming(inS);
-		//System.out.println(inS);
-//		InsertionSort inSW = new InsertionSort(nums3, "Insertion Sort Worst");
-//		doTiming(inSW);
-		//System.out.println(inSW);
+//		
+//		SelectionSort sSort = new SelectionSort(numList, "Selection Sort");
+//		doTiming(sSort);
+		//System.out.println(sSort);
+////		
+//		BubbleSort bSort = new BubbleSort(nums, "Bubble Sort");
+//		doTiming(bSort);
+////		//System.out.println(bSort);
+//		InsertionSort inS = new InsertionSort(nums3A, "Insertion Sort");
+//		doTiming(inS);
+//		//System.out.println(inS);
+////		InsertionSort inSW = new InsertionSort(nums3, "Insertion Sort Worst");
+////		doTiming(inSW);
+//		//System.out.println(inSW);
 
 		
 	}
@@ -107,6 +124,26 @@ public class SortingHat {
 		
 		
 		return nlist;
+	}
+	
+	public static void listCheckAsc(int[] l)
+	{
+		if(l != null)
+		{
+			int lastVale = l[0];
+		}
+	}
+	
+	public static boolean listCheck2(int[] l)
+	{
+		for(int i = 0; i < l.length - 1; i++)
+		{
+			if(l[i] > l[i + 1])
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
